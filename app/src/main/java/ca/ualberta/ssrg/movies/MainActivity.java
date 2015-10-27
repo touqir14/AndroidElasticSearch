@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 import ca.ualberta.ssrg.androidelasticsearch.R;
@@ -103,6 +104,10 @@ public class MainActivity extends Activity {
 		// TODO: Extract search query from text view
 		
 		// TODO: Run the search thread
+
+		EditText myEditText   = (EditText)findViewById(R.id.editText1);
+		SearchThread thread = new SearchThread(myEditText.getText().toString());
+		thread.start();
 		
 	}
 	
